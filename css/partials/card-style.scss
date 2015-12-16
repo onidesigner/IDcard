@@ -1,0 +1,137 @@
+#idCard{
+	width: $card-width;
+	background-color: $white-color;
+	margin: 20px auto;
+	@include border-radius($border-radius);
+	@include box-shadow(0 0 10px rgba($blue-color, 0.2));
+	position: relative;
+
+	* {
+	    -webkit-box-sizing: border-box;
+	    -moz-box-sizing: border-box;
+	    box-sizing: border-box;
+	}
+
+	&:after{
+		content: "";
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-image: url(../img/logo.png);
+		background-repeat: no-repeat;
+		background-position: 10% 500%;
+		opacity: .05;
+		z-index: 0;
+	}
+	.header {
+		position: relative;
+		line-height: 30px;
+    	padding-top: 1px;
+    	z-index: 1;
+
+    	&:after{
+    		content: "";
+    		width: 100%;
+			background-color: $blue-color;
+    		background-color: rgba($blue-color, 0.8);
+			border-bottom: 1px solid darken($blue-color, 5%);
+			@include css3(border-top-left-radius, $border-radius);
+			@include css3(border-top-right-radius, $border-radius);
+			height: 40px;
+			position: absolute;
+			top: 0;
+		}
+
+		.logo {
+			width: 60px;
+			height: 60px;
+			background-image: url(../img/logo.png);
+			background-size: cover;
+			display: block;
+			position: absolute;
+			margin: 5px;
+			z-index: 2;
+		}
+
+		h2{
+			text-align: left;
+			color: $white-color;
+			font-size: 24px;
+			line-height: 40px;
+			margin-left: 70px;
+			position: relative;
+			z-index: 2;
+		}
+
+		h3{
+			text-align: left;
+			color: lighten($gray-color, 20%);
+			font-size: 12px;
+			margin-left: 70px;
+		}
+	}
+
+	.body{
+		position: relative;
+		text-align: center;
+		margin: 10px 0 20px;
+		z-index: 1;
+
+		.top{
+			h3{
+				font-size: 24px;
+				text-transform: uppercase;
+				font-weight: bold;
+				color: darken($gray-color, 5%);
+			}
+		}
+		.preview{
+			margin-top: 10px;
+			.avatar{
+				img{
+					width: 170px;
+					border: 1px solid lighten($gray-color, 10%);
+				}
+			}
+		}
+		.info{
+			margin-top: 10px;
+
+			.person-name{
+				font-size: 22px;
+				text-transform: uppercase;
+				font-weight: bold;
+				margin-bottom: 5px;
+				color: darken($blue-color, 5%);
+			}
+
+			.job-title{
+				font-style: italic;
+				color: lighten($gray-color, 20%);
+			}
+
+			.job-name{
+				padding-top: 5px;
+				font-size: 20px;
+				font-weight: bold;
+				color: $gray-color;
+			}
+		}
+	}
+
+	.footer{
+		text-align: left;
+    	border-top: 1px solid lighten($gray-color, 30%);
+		padding: 10px;
+		z-index: 1;
+
+		.barcode{
+			font-family: 'Code39AzaleaFont';
+			letter-spacing: 2px;
+		}
+		.code{
+			float: right;
+		}
+	}
+}

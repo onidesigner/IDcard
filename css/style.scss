@@ -1,0 +1,62 @@
+// Options
+$radius: true;
+
+// Sizes
+$border-radius: 5px;
+$card-width: 300px;
+
+// Colors
+$blue-color: #428bca;
+$gray-color: #5e5e5e;
+$white-color: #ffffff;
+
+// Mixins
+@mixin css3($property, $value){
+	-webkit-#{$property}: $value;
+	-moz-#{$property}: $value;
+	-o-#{$property}: $value;
+	-ms-#{$property}: $value;
+	#{$property}: $value;
+}
+
+@mixin transi($value...){
+	@include css3(transition, $value);
+}
+
+@mixin transf($value...){
+	@include css3(transform, $value);
+}
+
+@mixin boxs($value){
+	@include css3(box-sizing, $value);
+}
+
+@mixin bgs($value){
+	@include css3(background-size, $value);
+}
+
+@mixin anim($value){
+	@include css3(animation, $value);
+}
+
+@mixin border-radius($value){
+	@if $radius == true {
+		@include css3(border-radius, $value);
+	}
+}
+@mixin box-shadow($value){
+	@include css3(box-shadow, $value);
+}
+@mixin text-shadow($value){
+	@include css3(text-shadow, $value);
+}
+
+@import "partials/reset";
+@import "partials/Code39Azalea-font";
+
+body {
+	background-color: #ccc;
+	font-family: 'Roboto', sans-serif;
+}
+
+@import "partials/card-style";
